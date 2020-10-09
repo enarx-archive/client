@@ -125,11 +125,10 @@ mod tests {
 
     #[test]
     fn removed() {
-        let pid = std::process::id();
-        let name = format!("/tmp/output-file.{}", pid);
-        let path = Path::new(&name);
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("output-file");
 
-        let file = OutputFile::create(path).unwrap();
+        let file = OutputFile::create(&path).unwrap();
         assert!(path.exists());
         assert!(path.is_file());
         drop(file);
@@ -138,11 +137,10 @@ mod tests {
 
     #[test]
     fn retained() {
-        let pid = std::process::id();
-        let name = format!("/tmp/output-file.{}", pid);
-        let path = Path::new(&name);
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("output-file");
 
-        let file = OutputFile::create(path).unwrap();
+        let file = OutputFile::create(&path).unwrap();
         assert!(path.exists());
         assert!(path.is_file());
         drop(file.done());
