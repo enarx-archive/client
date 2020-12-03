@@ -18,7 +18,7 @@ is-it-maintained-issue-resolution = { repository = "enarx/enarx" }
 is-it-maintained-open-issues = { repository = "enarx/enarx" }
 
 [dependencies]
-wasmparser = "0.68"
+wasmparser = "0.69"
 structopt = "0.3"
 tempfile = "3.1"
 lebicon = "4.0"
