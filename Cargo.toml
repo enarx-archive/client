@@ -20,7 +20,7 @@ is-it-maintained-open-issues = { repository = "enarx/enarx" }
 [dependencies]
 wasmparser = "0.71"
 structopt = "0.3"
-tempfile = "3.2"
+tempfile = "3.3"
 lebicon = "4.0"
 codicon = "3.0"
 walkdir = "2.3"
